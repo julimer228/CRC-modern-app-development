@@ -5,11 +5,11 @@ const Login = () =>{
         <div className="login">
             <div className="card">
                 <div className="left">
-                    <h1>Hello World!</h1>
+                    <h1>Medits</h1>
                     <p>
                     Join our study community. Let's begin the journey!
                     </p>
-                    <span>Do you have an account?</span>
+                    <span>Don't have an account?</span>
                      <button>Register</button>
                 </div>
 

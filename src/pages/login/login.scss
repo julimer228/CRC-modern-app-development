@@ -1,6 +1,6 @@
 .login{
     height:100vh;
-    background-color: #C2D8C9;
+    background: linear-gradient(rgba(98, 129, 108, 0.5),rgba(66, 140, 89, 0.5));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,7 @@
         overflow: hidden;
 
         .left{
-            background: linear-gradient(rgba(90, 191, 122, 0.5),rgba(66, 140, 89, 0.5)), url("../../images/background.jpg") center;
+            background: linear-gradient(rgba(90, 191, 122, 0.5),rgba(66, 140, 89, 0.5)), url("../../images/background-login.jpg") center;
             background-size: cover;
             padding: 50px;
             display: flex;
