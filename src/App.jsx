@@ -29,9 +29,7 @@ function App() {
       <div className="page">
         <Navbar/>
         <div className="center-part">
-          <Leftbar/>
           <Outlet/>
-          <Rightbar/>
         </div>
       </div>
     )
@@ -81,7 +79,7 @@ function App() {
     },
   ]);
 
-  return (<div>
+  return (<div className="page"> 
     <RouterProvider router={router}/>
   </div>);
 }

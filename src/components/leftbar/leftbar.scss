@@ -1,0 +1,41 @@
+.leftbar{
+    background-color: aqua;
+    height: 100vdh;
+    .container{
+        padding: 20px;
+
+        .menu{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:10px;
+            .user{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                
+
+                img{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                span{
+                 color:aliceblue;
+                 font-size: 20;
+                }
+            }
+            .items{
+                span{
+
+                }
+                .icon{
+                    color: aliceblue;
+                }
+
+            }
+        }
+    }
+}
