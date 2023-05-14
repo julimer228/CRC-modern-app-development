@@ -11,6 +11,17 @@ import{
 
 function App() {
 
+
+
+  const Layout = () =>{
+    return(
+      <div>
+        
+      </div>
+    )
+  }
+
+
   const router = createBrowserRouter([
     {
       path:"/login",
