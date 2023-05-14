@@ -3,11 +3,9 @@ import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./app.scss"
-
 import Navbar from "./components/navbar/Navbar";
-import Leftbar from "./components/leftbar/Leftbar";
-import Rightbar from "./components/rightbar/Rightbar";
-
+import createCourses from "./pages/createCourse/createCourse";
+import myCourses from "./pages/myCourses/myCourses";
 
 import{
   createBrowserRouter,
@@ -26,7 +24,7 @@ function App() {
 
   const Layout = () =>{
     return(
-      <div className="page">
+      <div className="theme-dark">
         <Navbar/>
         <div className="center-part">
           <Outlet/>
@@ -58,6 +56,14 @@ function App() {
       {
         path:"/profile/:id",
         element:<Profile/>
+      },
+      {
+        path:"/my",
+        element:<myCourses/>
+      },
+      {
+        path:"/create",
+        element:<myCourses/>
       }
   ]
     },

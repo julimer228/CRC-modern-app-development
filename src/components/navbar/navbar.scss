@@ -1,5 +1,6 @@
 .navbar{
 
+
     .icon{
         color: aliceblue;
     }
@@ -24,19 +25,21 @@
             color: aliceblue;
         }
 
-        .search{
+        .menu-button{
             display: flex;
             align-items: center;
-            gap: 10px;
-            border: 1px solid aliceblue;
-            border-radius: 7px;
-            padding: 5px;
+            justify-content: space-between;
+            font-size: medium;
+            color: aliceblue;
+            background-color: #2E4535;
+            border-radius: 10px;
+            border: 0cm;
 
-            input{
-                border: none;
-                width: 500px;
-            }
         }
+        .menu-button:hover{
+            background-color: #428C59;
+        }
+
     }
 
     .right{
