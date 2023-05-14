@@ -1,0 +1,87 @@
+.login{
+    height:100vh;
+    background-color: #C2D8C9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    .card{
+        width: 50%;
+        display: flex;
+        background-color: rgb(255, 255, 255);
+        border-radius: 40px;
+        min-height: 600px;
+        overflow: hidden;
+
+        .left{
+            background: linear-gradient(rgba(90, 191, 122, 0.5),rgba(66, 140, 89, 0.5)), url("../../images/background.jpg") center;
+            background-size: cover;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            color: rgb(255, 255, 255);
+
+            flex:1;
+            h1{
+                font-size: 100px;
+                line-height: 100px;
+            }
+            p{
+                font-size: 30px;
+            }
+            span{
+                font-size: 25px;
+                font-weight: bold;
+            }
+            button{
+                width: 50%;
+                padding: 10px;
+                border: 10px;
+                background-color: rgb(255, 255, 255);
+                color: #2E4535;
+                font-weight: bold;
+                cursor: pointer;
+
+            }
+
+        }
+
+        .right{
+            flex:1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            justify-content: center;
+
+            h1{
+                color: #555;
+
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                input{
+                    border: none;
+                    border-bottom: 1px solid lightblue;
+                    padding: 20px 10px;
+                }
+                button{
+                    width: 50%;
+                    padding: 10px;
+                    border: 10px;
+                    background-color: rgb(9, 111, 77);
+                    color: antiquewhite;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+
+
+        }
+    }
+}
