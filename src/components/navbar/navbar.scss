@@ -1,0 +1,69 @@
+.navbar{
+
+    .icon{
+        color: aliceblue;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 90px;
+    border-bottom: 1px solid aliceblue;
+    background-image: linear-gradient(to right,  #2E4535, #428C59, #2E4535);;
+
+
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        span{
+            font-weight: bold;
+            font-size: 50px;
+            color: aliceblue;
+        }
+
+        .search{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid aliceblue;
+            border-radius: 7px;
+            padding: 5px;
+
+            input{
+                border: none;
+                width: 500px;
+            }
+        }
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+
+            img{
+                width: 85px;
+                height: 85px;
+                border-radius: 50%;
+                object-fit: cover;
+            
+
+            }
+
+            span{
+                font-weight: bold;
+                font-size: 20px;
+                color: aliceblue;
+            }
+        }
+    }
+}
