@@ -9,6 +9,7 @@
     .card{
         width: 50%;
         display: flex;
+        flex-direction: row-reverse;
         background-color: rgb(255, 255, 255);
         border-radius: 40px;
         min-height: 600px;
@@ -53,7 +54,7 @@
             padding: 50px;
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 20px;
             justify-content: center;
 
             h1{
