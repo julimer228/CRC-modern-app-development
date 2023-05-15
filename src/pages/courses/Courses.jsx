@@ -1,11 +1,11 @@
+import "./courses.scss"
 import CourseItem from "../../components/course/CourseItem";
-import "./home.scss"
 
-const Home = () =>{
+const Courses = () =>{
     return(
-        <div className="home">
+        <div className="courses-page">
             <div className="title">
-                <span>Choose courses</span>
+                <span>Create course</span>
             </div>
             <div className="courses">
 
@@ -13,9 +13,9 @@ const Home = () =>{
                 <CourseItem/>
                 <CourseItem/>
                 <CourseItem/>
-            </div>
+            </div>      
         </div>
     );
 };
 
-export default Home
+export default Courses

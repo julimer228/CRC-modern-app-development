@@ -40,10 +40,10 @@ const Navbar = () =>{
 
             <div className="right">
                 <div className="user">
-                    <img src="src\images\profile-women.jpg"/>
                     <span>
                         Ann Mika
                     </span>
+                    <img src="src\images\profile-women.jpg"/>
                 </div>
             </div>
         </div>

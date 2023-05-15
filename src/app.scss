@@ -1,8 +1,16 @@
-
 .theme-dark{
+    height: 100vh;
+    margin: 0%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 
 .center-part{
     display: flex;
-   
+    height: 100%;
+    margin: 0%;
+    width: 80%;
 }
 }

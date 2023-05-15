@@ -4,13 +4,12 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./app.scss"
 import Navbar from "./components/navbar/Navbar";
-import createCourses from "./pages/createCourse/createCourse";
-import myCourses from "./pages/myCourses/myCourses";
+import My from "./pages/my/my";
+import Courses from "./pages/courses/Courses";
 
 import{
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
   Navigate,
 } from "react-router-dom";
@@ -55,16 +54,17 @@ function App() {
       },
       {
         path:"/profile/:id",
-        element:<Profile/>
+        element:<Profile/>,
       },
       {
         path:"/my",
-        element:<myCourses/>
+        element:<My/>,
       },
       {
         path:"/create",
-        element:<myCourses/>
-      }
+        element:<Courses/>,
+      },
+
   ]
     },
     {
@@ -83,6 +83,8 @@ function App() {
       path:"/profile",
       element: <Profile/>,
     },
+
+
   ]);
 
   return (<div className="page"> 

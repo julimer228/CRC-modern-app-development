@@ -1,20 +1,25 @@
-.navbar{
 
+.navbar{
 
     .icon{
         color: aliceblue;
     }
 
+
+    margin: 0px;
+    box-shadow: 10px 10px 10px 20px   #2e5f3d; 
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     height: 90px;
-    border-bottom: 1px solid aliceblue;
-    background-image: linear-gradient(to right,  #2E4535, #428C59, #2E4535);;
-
+    background-image: linear-gradient(to right,  #2E4535, #428C59, #2E4535);
+    border-radius: 10px;
 
     .left{
+        
         display: flex;
         align-items: center;
         gap: 40px;

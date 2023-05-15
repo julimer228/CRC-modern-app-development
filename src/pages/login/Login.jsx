@@ -5,17 +5,6 @@ const Login = () =>{
     return(
         <div className="login">
             <div className="card">
-                <div className="left">
-                    <h1>Medits</h1>
-                    <p>
-                    Join our study community. Let's begin the journey!
-                    </p>
-                    <span>Don't have an account?</span>
-
-                     <Link to="/register">
-                     <button>Register</button>
-                     </Link>
-                </div>
 
                 <div className="right">
                     <h1>
@@ -26,6 +15,18 @@ const Login = () =>{
                         <input type ="password" placeholder="Password"/>
                         <button>Login</button>
                     </form>
+                </div>
+
+                <div className="left">
+                    <h1>Medits</h1>
+                    <p>
+                    Join our study community. Let's begin the journey!
+                    </p>
+                    <span>Don't have an account?</span>
+
+                     <Link to="/register">
+                     <button>Register</button>
+                     </Link>
                 </div>
             </div>
         </div>

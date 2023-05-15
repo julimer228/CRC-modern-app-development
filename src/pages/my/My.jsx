@@ -1,11 +1,11 @@
+import "./my.scss"
 import CourseItem from "../../components/course/CourseItem";
-import "./home.scss"
 
-const Home = () =>{
+const My = () =>{
     return(
-        <div className="home">
+        <div className="my">
             <div className="title">
-                <span>Choose courses</span>
+                <span>My courses</span>
             </div>
             <div className="courses">
 
@@ -18,4 +18,4 @@ const Home = () =>{
     );
 };
 
-export default Home
+export default My
