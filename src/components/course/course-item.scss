@@ -1,0 +1,39 @@
+.element{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    background-color: aqua;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    .left{
+        span{
+            color: aliceblue;
+            font-size: 30px;
+        }
+
+        img{
+
+        }
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .course-element{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        .icon{
+            color: aliceblue;
+        }
+
+        span{
+            color: aliceblue;
+            font-size: 20px;
+        }
+    }
+    }
+
+}

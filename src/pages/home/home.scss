@@ -16,13 +16,15 @@
 
         span{
             font-size: 40px;
-            color: whitesmoke;
+            color: aliceblue;
             font-weight: bold;
         }
     }
 
     .courses{
-        
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
     

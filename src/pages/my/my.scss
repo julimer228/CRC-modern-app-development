@@ -22,7 +22,9 @@
     }
 
     .courses{
-        
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
     
