@@ -65,7 +65,9 @@ const MyCourseItem = () =>{
                     <span>
                     Language:
                     </span>
-             
+                    <span>
+                    English
+                    </span>
                 </div>
             </div>
         </div>
