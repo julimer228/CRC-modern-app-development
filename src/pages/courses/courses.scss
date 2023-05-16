@@ -19,13 +19,34 @@
             color: aliceblue;
             font-weight: bold;
         }
+
     }
 
-    .courses{
-        gap: 20px;
+    .left{
         display: flex;
         flex-direction: column;
+        width: 50%;
+        gap: 20px;
+        h1{
+            font-size: 30px;
+
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            input{
+                font-size: 20px;
+            }
+
+            button{
+                font-size: 20px;
+            }
+        }
+
     }
+
+
 
     
 }
