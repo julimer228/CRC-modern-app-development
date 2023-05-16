@@ -3,7 +3,7 @@ import CottageIcon from '@mui/icons-material/Cottage';
 import EditIcon from '@mui/icons-material/Edit';
 import GridViewIcon from '@mui/icons-material/GridView';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import Person2Icon from '@mui/icons-material/Person2';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { Link } from "react-router-dom";
 
 const Navbar = () =>{
@@ -39,11 +39,17 @@ const Navbar = () =>{
             </div>
 
             <div className="right">
+            <Link to="/register" style={{textDecoration:"none"}}>
+            <button className="menu-button">
+                    <ExitToAppIcon className="icon"/>
+                    <p>Log out</p>
+            </button>
+            </Link>
                 <div className="user">
                     <span>
                         Ann Mika
                     </span>
-                    <img src="src\images\profile-women.jpg"/>
+                    <img src="src\icons\white-blood-cell.png"/>
                 </div>
             </div>
         </div>

@@ -43,6 +43,7 @@
         }
         .menu-button:hover{
             background-color: #428C59;
+            cursor: pointer;
         }
 
     }
@@ -51,6 +52,22 @@
         display: flex;
         align-items: center;
         gap: 20px;
+
+        .menu-button{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: medium;
+            color: aliceblue;
+            background-color: #2E4535;
+            border-radius: 10px;
+            border: 0cm;
+
+        }
+        .menu-button:hover{
+            background-color: #428C59;
+            cursor: pointer;
+        }
 
         .user{
             display: flex;
@@ -63,6 +80,7 @@
                 height: 85px;
                 border-radius: 50%;
                 object-fit: cover;
+                padding: 20px 30px 20px 30px;
             
 
             }

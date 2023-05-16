@@ -1,5 +1,5 @@
 import "./my.scss"
-import CourseItem from "../../components/course/CourseItem";
+import MyCourseItem from "../../components/my-course-item/MyCourseItem";
 
 const My = () =>{
     return(
@@ -9,10 +9,8 @@ const My = () =>{
             </div>
             <div className="courses">
 
-                <CourseItem/>
-                <CourseItem/>
-                <CourseItem/>
-                <CourseItem/>
+                <MyCourseItem/>
+              
             </div>
         </div>
     );

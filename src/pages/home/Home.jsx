@@ -1,4 +1,4 @@
-import CourseItem from "../../components/course/CourseItem";
+import CourseItem from "../../components/course-item/CourseItem";
 import "./home.scss"
 
 const Home = () =>{
@@ -10,9 +10,7 @@ const Home = () =>{
             <div className="courses">
 
                 <CourseItem/>
-                <CourseItem/>
-                <CourseItem/>
-                <CourseItem/>
+
             </div>
         </div>
     );

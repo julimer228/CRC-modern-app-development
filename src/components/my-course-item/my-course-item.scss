@@ -2,29 +2,46 @@
     display: flex;
     align-items: center;
     gap:30px;
-    background-color: aqua;
+    background-color: #879a8d;
     justify-content: space-between;
     padding: 20px 20px 20px 20px;
+    border-radius: 30px;
+
+
     .left{
+        align-items: center;
+        display: flex;
+        padding: 20px 20px 20px 100px;
+        gap:30px;
         span{
             color: aliceblue;
             font-size: 30px;
         }
 
         img{
-
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
         }
     }
 
     .right{
+        padding: 20px 100px 20px 20px;
+
+    
         display: flex;
         flex-direction: column;
         gap: 10px;
 
         .course-element{
+            justify-content: flex-start;
         display: flex;
         align-items: center;
         flex-direction: row;
+
+        gap: 10px;
+
         .icon{
             color: aliceblue;
         }
@@ -36,4 +53,6 @@
     }
     }
 
-}
+        
+    }
+

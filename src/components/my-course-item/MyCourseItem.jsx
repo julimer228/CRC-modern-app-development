@@ -1,4 +1,4 @@
-import "./course-item.scss"
+import "./my-course-item.scss"
 import PersonIcon from '@mui/icons-material/Person';
 import AlarmIcon from '@mui/icons-material/Alarm';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -6,32 +6,45 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
 
-const CourseItem = () =>{
+const MyCourseItem = () =>{
     return(
         <div className="element">
             <div className="left">
+            <img src="src\icons\cell.png" />
                 <span>Course Title</span>
-                <img src="" alt="" />
+               
             </div>
             <div className="right">
                 <div className="course-element">
                     <CalendarMonthIcon className="icon"/>
                     <span>
-                    Date
+                    Date:
                     </span>
+
+                   <span >
+                    10:20 01.02.2023
+                    </span>
+        
+                    
                 </div>
 
                 <div className="course-element">
                     <AlarmIcon className="icon"/>
                     <span>
-                    Time
+                    Duration:
+                    </span>
+                    <span>
+                    120 min
                     </span>
                 </div>
 
                 <div className="course-element">
                     <MonetizationOnIcon className="icon"/>
                     <span>
-                    Price
+                    Price:
+                    </span>
+                    <span>
+                    2000 zł
                     </span>
 
                 </div>
@@ -39,7 +52,10 @@ const CourseItem = () =>{
                 <div className="course-element"> 
                     <PersonIcon className="icon"/>
                     <span>
-                    Teacher
+                    Teacher:
+                    </span>
+                    <span>
+                    Mark Parker
                     </span>
                 </div>
 
@@ -47,12 +63,13 @@ const CourseItem = () =>{
                 <div className="course-element">
                     <TranslateIcon className="icon"/>
                     <span>
-                    Language
+                    Language:
                     </span>
+             
                 </div>
             </div>
         </div>
     );
 };
 
-export default CourseItem
+export default MyCourseItem
