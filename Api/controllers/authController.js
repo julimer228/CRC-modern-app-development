@@ -1,5 +1,7 @@
 import {db} from "../database/connect.js"
 import bcrypt from "bcryptjs"
+import  response  from "express"
+import Jwt  from "jsonwebtoken"
 
 export const login = (req, res) =>{
     const q = "SELECT * FROM users WHERE username = ?"
@@ -10,7 +12,20 @@ export const login = (req, res) =>{
 
         const checkPassword = bcrypt.compareSync(req.body.password, data[0].password)
         if(!checkPassword) return res.status(400).json("Wrong password or username!")
-    })
+    
+        const {password, ...others} = data[0]
+    
+    
+        const token = Jwt.sign({id: data[0].id},"value");
+       
+
+       
+        res.cookie("accessToken", token,{
+            httpOnly:true,
+        }).status(200).json(others);
+
+
+    });
 }
 
 export const register = (req, res) =>{

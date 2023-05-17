@@ -1,11 +1,16 @@
 import  Express  from "express";
-import userRoutes from "./routes/users.js"
-import coursesRoutes from "./routes/courses.js"
-import authRoutes from "./routes/auth.js"
+import userRoutes from "./routes/users.js";
+import coursesRoutes from "./routes/courses.js";
+import authRoutes from "./routes/auth.js";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+
 
 const app = Express()
 
+app.use(cors())
 app.use(Express.json())
+app.use(cookieParser())
 
 app.use("/api/users",userRoutes)
 app.use("/api/courses",coursesRoutes)
