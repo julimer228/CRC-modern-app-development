@@ -33,13 +33,11 @@ const Courses = () =>{
                         <label>Time</label>
                         <input type ="time"/>
 
-                        <label>Duration</label>
-                        <label for="duration">PLN</label>
+                        <label>Duration (h)</label>
                         <input type ="number" placeholder="Duration" step={0.5} id="duration"/>
 
 
-                        <label>Price</label>
-                        <label for="pol">Polish</label>
+                        <label>Price (PLN)</label>
                         <input type ="number" placeholder="Price" step={25} min="0" />
 
                         <label>Teacher</label>
@@ -49,12 +47,12 @@ const Courses = () =>{
 
                         <div className="languages-box">
                         <div className="language">
-                        <label for="pol">Polish</label>
+                        <label>Polish</label>
                         <input type ="radio" id="pol"/>
                         </div>
 
                         <div className="language">
-                        <label for="eng">English</label>
+                        <label>English</label>
                         <input type = "radio" id="eng"/>
                         </div>
                         </div>
@@ -63,9 +61,18 @@ const Courses = () =>{
                     </form>
                 </div>
 
-                <div className="right">
-                        <input type="file" id="file" accept=".jpg, .png" button="" value=""/>
-                        <span>No file chosen</span>
+                <div className="right">  
+                <div className="img-box"> 
+                    <img className="course-img"  src="src\images\course-default.jpg" /> 
+                </div>   
+                    <div className="fileUpload btn btn-primary">
+                        <button>
+                        <label className="upload">
+                            <input name='Image' type="file"/>
+                                Upload Image
+                        </label>
+                        </button>
+                    </div>
                 </div>
             </div>    
         </div>
