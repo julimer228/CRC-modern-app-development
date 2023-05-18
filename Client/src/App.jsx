@@ -6,6 +6,8 @@ import "./app.scss"
 import Navbar from "./components/navbar/Navbar";
 import My from "./pages/my/my";
 import Courses from "./pages/courses/Courses";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 import{
   createBrowserRouter,
@@ -19,11 +21,11 @@ import{
 function App() {
 
 
-  const currentUser = true;
+  const {currentUser} = useContext(AuthContext);
 
   const Layout = () =>{
     return(
-      <div className="theme-dark">
+      <div className="theme">
         <Navbar/>
         <div className="center-part">
           <Outlet/>

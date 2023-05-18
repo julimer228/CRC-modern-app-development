@@ -28,13 +28,10 @@ const Register = () =>{
             await axios.post(endpoints.REGISTER, inputs)
         }
         catch(err){
-            setError(err)
+            setError(err.response.data)
         }
     }
 
-    console.log(err)
-
-    console.log(inputs)
 
     return(
         <div className="register">
@@ -47,6 +44,7 @@ const Register = () =>{
                         <input type ="text" placeholder="Username" name="username" onChange={handleChange}/>
                         <input type ="email" placeholder="Email" name="email" onChange={handleChange}/>
                         <input type ="password" placeholder="Password" name="password" onChange={handleChange}/>
+                        {err && err}
                         <button onClick={registerUser}>Sign up</button>
                     </form>
                 </div>
