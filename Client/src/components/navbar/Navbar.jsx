@@ -2,11 +2,15 @@ import "./navbar.scss"
 import CottageIcon from '@mui/icons-material/Cottage';
 import EditIcon from '@mui/icons-material/Edit';
 import GridViewIcon from '@mui/icons-material/GridView';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
+import { useContext, useState } from "react";
+
 
 const Navbar = () =>{
+
+
     return(
         <div className="navbar">
             <div className="left">
@@ -47,7 +51,7 @@ const Navbar = () =>{
             </Link>
                 <div className="user">
                     <span>
-                        Ann Mika
+                        {currentUser.username}
                     </span>
                     <img src="src\icons\white-blood-cell.png"/>
                 </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 import { useState } from "react";
 import * as endpoints from "../../endpoints";
@@ -15,6 +15,8 @@ const Register = () =>{
         password:""
     })
 
+        const navigate = useNavigate();
+
     const [err, setError] = useState(null)
 
     const handleChange = e =>{
@@ -26,6 +28,7 @@ const Register = () =>{
 
         try{
             await axios.post(endpoints.REGISTER, inputs)
+            navigate("/login")
         }
         catch(err){
             setError(err.response.data)

@@ -1,8 +1,6 @@
 import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import * as endpoints from "../../endpoints";
-import axios from 'axios';
 import { AuthContext } from "../../context/authContext";
 
         
