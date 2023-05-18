@@ -13,7 +13,7 @@ app.use((req, res, next)=>{
     next();
 });
 
-app.use(cors("http://localhost:5173"))
+app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(Express.json())
 app.use(cookieParser())
 
