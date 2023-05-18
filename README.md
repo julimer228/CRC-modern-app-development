@@ -11,5 +11,7 @@
  cookie-parser
  cors
  axios
+ context api
+ react query
  
 

@@ -1,9 +1,8 @@
-import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { createContext, useEffect, useState } from "react";
 import * as endpoints from "../endpoints"
 
 export const AuthContext = createContext();
-
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
@@ -14,6 +13,7 @@ export const AuthContextProvider = ({ children }) => {
     const res = await axios.post(endpoints.LOGIN, inputs, {
       withCredentials: true,
     });
+
     setCurrentUser(res.data)
   };
 
