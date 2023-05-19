@@ -11,7 +11,7 @@ const Home = () =>{
 
 
     const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest.get("/courses").then((res) => {
+    makeRequest.get("/courses/get").then((res) => {
       return res.data;
     }) );
 

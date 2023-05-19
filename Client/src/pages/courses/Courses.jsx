@@ -1,5 +1,7 @@
 import "./courses.scss"
-
+import * as endpoints from "../../endpoints";
+import axios from 'axios';
+import { useState } from "react";
 
 export function getCurrentDate(separator=''){
 
@@ -14,6 +16,59 @@ export function getCurrentDate(separator=''){
 
 const Courses = () =>{
 
+
+
+
+    const [inputs, setInputs] = useState({
+        title:null,
+        date:null,
+        time:null,
+        duration:null,
+        price:null,
+        teacher:null,
+        langs:null,
+        image:null
+    })
+
+
+    let dateTime = inputs.date+" "+inputs.time
+
+    const toSend = {
+        title:inputs.title,
+        date: dateTime,
+        duration:inputs.duration,
+        price:inputs.price,
+        teacher:inputs.teacher,
+        language:inputs.langs,
+        img:"test"
+    }
+
+    const [err, setError] = useState(null)
+    const [info, setInfo] = useState(null)
+
+
+    const handleChange = e =>{
+        setInfo(null)
+        setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
+    }
+
+    const addCourse =  async e =>{
+        e.preventDefault()
+
+        try{
+            await axios.post(endpoints.ADD_COURSE, toSend)
+            setInfo("Course "+toSend.title+" has been created!")
+        }
+        catch(err){
+            setError("Invalid input!")
+        }
+    }
+
+
+
+
+
+
     const date = getCurrentDate('-');
 
     return(
@@ -25,40 +80,46 @@ const Courses = () =>{
                 <div className="left">
                     <form>
                         <label>Course name</label>
-                        <input type ="text" placeholder="Course name"/>
+                        <input type ="text" placeholder="Course name" name="title" onChange={handleChange}/>
 
                         <label>Date</label>
-                        <input type ="date" min={date} placeholder="Date"/>
+                        <input type ="date" min={date} placeholder="Date" name="date" onChange={handleChange}/>
 
                         <label>Time</label>
-                        <input type ="time"/>
+                        <input type ="time" name="time" onChange={handleChange}/>
 
-                        <label>Duration (h)</label>
-                        <input type ="number" placeholder="Duration" step={0.5} id="duration"/>
+                        <label>Duration (min)</label>
+                        <input type ="number" placeholder="Duration" step={15} id="duration" name="duration" onChange={handleChange}/>
 
 
                         <label>Price (PLN)</label>
-                        <input type ="number" placeholder="Price" step={25} min="0" />
+                        <input type ="number" placeholder="Price" step={25} min="0" name="price" onChange={handleChange}/>
 
                         <label>Teacher</label>
-                        <input type ="text" placeholder="Teacher"/>
+                        <input type ="text" placeholder="Teacher" name="teacher" onChange={handleChange}/>
 
                         <label>Language</label>
 
                         <div className="languages-box">
-                        <div className="language">
-                        <label>Polish</label>
-                        <input type ="radio" id="pol"/>
+                            <fieldset id="langs" onChange={handleChange}>
+                                <div className="language">
+                
+                                <label>Polish</label>
+                                    <input type ="radio" id="pol" name="langs" value="Polish"/>
+                                </div>
+
+                                <div className="language">
+                                    <label>English</label>
+                                    <input type = "radio" id="eng" name="langs" value="English"/>
+                                </div>
+                            </fieldset>
                         </div>
 
-                        <div className="language">
-                        <label>English</label>
-                        <input type = "radio" id="eng"/>
-                        </div>
-                        </div>
-
-                        <button>Create Course</button>
+                        <button onClick={addCourse}>Create Course</button>
                     </form>
+                    <span className="info">{err && err}</span>
+                    <span className="info">{info && info}</span>
+                    
                 </div>
 
                 <div className="right">  
@@ -68,7 +129,7 @@ const Courses = () =>{
                     <div className="fileUpload btn btn-primary">
                         <button>
                         <label className="upload">
-                            <input name='Image' type="file"/>
+                            <input name='image' type="file" onChange={handleChange}/>
                                 Upload Image
                         </label>
                         </button>

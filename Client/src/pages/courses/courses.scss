@@ -39,6 +39,14 @@
         width: 50%;
         gap: 20px;
 
+
+        .info{
+            font-size: 20px;
+            font-weight: bolder;
+            color: aliceblue;
+            padding: 0px 0px 0px 60px;
+        }
+
         label{
             font-size: 20px;
             color: aliceblue;
@@ -77,6 +85,15 @@
                 cursor: pointer;
             }
 
+            fieldset{
+                border: 0px;
+                padding: 20px 20px 20px 20px;
+
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 40%;
             .languages-box{
                 display: flex;
                 flex-direction: row;
@@ -94,6 +111,7 @@
                 font-size: 15px;
                 color: aliceblue;
             }
+        }
         }
         }
 
