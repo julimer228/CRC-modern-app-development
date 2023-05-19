@@ -1,7 +1,10 @@
 import "./courses.scss"
 import * as endpoints from "../../endpoints";
 import axios from 'axios';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { makeRequest } from "../../axios";
+
+
 
 export function getCurrentDate(separator=''){
 
@@ -9,14 +12,21 @@ export function getCurrentDate(separator=''){
     let date = newDate.getDate();
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
-
-    
     return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date}`
     }
 
 const Courses = () =>{
 
-
+    const upload = async () => {
+        try {
+          const formData = new FormData();
+          formData.append("file", file);
+          const res = await makeRequest.post("/upload", formData);
+          return res.data;
+        } catch (err) {
+          console.log(err);
+        }
+      };
 
 
     const [inputs, setInputs] = useState({
@@ -27,25 +37,45 @@ const Courses = () =>{
         price:null,
         teacher:null,
         langs:null,
-        image:null
+        image:"course-default.jpg"
     })
 
+    const [imgUrl, setUrl] =useState("course-default.jpg") ;
 
     let dateTime = inputs.date+" "+inputs.time
 
-    const toSend = {
+    let toSend = {
         title:inputs.title,
         date: dateTime,
         duration:inputs.duration,
         price:inputs.price,
         teacher:inputs.teacher,
         language:inputs.langs,
-        img:"test"
+        img:"../../../public/upload/"+imgUrl
     }
 
     const [err, setError] = useState(null)
     const [info, setInfo] = useState(null)
+    const [file, setFile] = useState(null);
+    const [info_img, setImgInfo] = useState(null);
 
+    const handleClick = async (e) => {
+        e.preventDefault();
+        let url=null;
+
+        if (file) {url = await upload();
+        setUrl(url);
+        setImgInfo("Image has been accepted");
+        }
+        else{
+            setImgInfo("Invalid Image")
+        }
+
+        setTimeout(() => {
+            setImgInfo(null);
+                    }, 2000);
+        
+      };
 
     const handleChange = e =>{
         setInfo(null)
@@ -58,9 +88,15 @@ const Courses = () =>{
         try{
             await axios.post(endpoints.ADD_COURSE, toSend)
             setInfo("Course "+toSend.title+" has been created!")
+            setTimeout(() => {
+                setInfo(null);
+                        }, 3000);
         }
         catch(err){
             setError("Invalid input!")
+            setTimeout(() => {
+                setError(null);
+                        }, 3000);
         }
     }
 
@@ -124,16 +160,26 @@ const Courses = () =>{
 
                 <div className="right">  
                 <div className="img-box"> 
-                    <img className="course-img"  src="src\images\course-default.jpg" /> 
+                  {file && (
+              <img className="file" alt="" src={URL.createObjectURL(file)} />
+            )}
+                   
                 </div>   
-                    <div className="fileUpload btn btn-primary">
+                    <div className="buttons">
                         <button>
                         <label className="upload">
-                            <input name='image' type="file" onChange={handleChange}/>
+                        <input type="file" id="file" 
+                        onChange={(e) => setFile(e.target.files[0])}/>
                                 Upload Image
                         </label>
                         </button>
+                        <button onClick={handleClick}>
+                            Accept image
+                        </button>
                     </div>
+                    <div className="info">
+                        <span>{info_img && info_img}</span>
+                        </div>
                 </div>
             </div>    
         </div>
