@@ -3,6 +3,6 @@ import {getCourse} from "../controllers/coursesController.js"
 
 const router = Express.Router()
 
-router.get("/find/:coursesId", getCourse)
+router.get("/", getCourse)
 
 export default router

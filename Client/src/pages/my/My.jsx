@@ -1,7 +1,20 @@
 import "./my.scss"
-import MyCourseItem from "../../components/my-course-item/MyCourseItem";
+import { makeRequest } from "../../axios";
+import CourseItem from "../../components/course-item/CourseItem";
+import { useState } from "react";
+import { useQuery, useQueryClient, useMutation } from "react-query";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const My = () =>{
+
+    
+    const { isLoading, error, data } = useQuery(["posts"], () =>
+    makeRequest.get("/courses?userId="+userId).then((res) => {
+      return res.data;
+    }) );
+
+
     return(
         <div className="my">
             <div className="title">
@@ -9,7 +22,11 @@ const My = () =>{
             </div>
             <div className="courses">
 
-                <MyCourseItem/>
+                {
+                    data.map((course)=>(
+                        <CourseItem  course = {course} key={course.id}/>
+                    ))
+                }
               
             </div>
         </div>

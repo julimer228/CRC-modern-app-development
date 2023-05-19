@@ -5,13 +5,27 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import TranslateIcon from '@mui/icons-material/Translate';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
+import { useState } from "react";
+import { useQuery, useQueryClient, useMutation } from "react-query";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
+import Moment from 'moment';
 
-const CourseItem = () =>{
+
+const CourseItem = ({ course }) =>{
+
+    const queryClient = useQueryClient();
+    const { currentUser } = useContext(AuthContext);
+
+
+
+
+
     return(
         <div className="element">
             <div className="left">
-            <img src="src\icons\cell.png" />
-                <span>Course Title</span>
+            <img src={course.img} />
+                <span>{course.title}</span>
                
             </div>
             <div className="right">
@@ -22,7 +36,7 @@ const CourseItem = () =>{
                     </span>
 
                    <span >
-                    10:20 01.02.2023
+                   {Moment(course.date).format('DD-MM-YYYY, HH:mm a')}
                     </span>
         
                     
@@ -34,7 +48,7 @@ const CourseItem = () =>{
                     Duration:
                     </span>
                     <span>
-                    120 min
+                    {course.duration} h
                     </span>
                 </div>
 
@@ -44,7 +58,7 @@ const CourseItem = () =>{
                     Price:
                     </span>
                     <span>
-                    2000 zł
+                    {course.price} zł
                     </span>
 
                 </div>
@@ -55,7 +69,7 @@ const CourseItem = () =>{
                     Teacher:
                     </span>
                     <span>
-                    Mark Parker
+                    {course.teacher}
                     </span>
                 </div>
 
@@ -66,7 +80,7 @@ const CourseItem = () =>{
                     Language:
                     </span>
                     <span>
-                    English
+                    {course.language}
                     </span>
                 </div>
             <div className="buttons">

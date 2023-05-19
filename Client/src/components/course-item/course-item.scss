@@ -12,16 +12,17 @@
         align-items: center;
         display: flex;
         padding: 20px 20px 20px 100px;
-        gap:30px;
+        gap:20%;
         span{
             color: aliceblue;
             font-size: 30px;
+            
         }
 
         img{
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 50%;
+            height:50%;
+            border-radius: 10%;
             object-fit: cover;
         }
     }

@@ -8,6 +8,7 @@ import My from "./pages/my/my";
 import Courses from "./pages/courses/Courses";
 import  {useContext} from "react";
 import {AuthContext} from "./context/authContext";
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 import{
   createBrowserRouter,
@@ -22,15 +23,18 @@ function App() {
 
 
   const {currentUser} = useContext(AuthContext);
+  const queryClient = new QueryClient()
 
   const Layout = () =>{
     return(
+      <QueryClientProvider client={queryClient}>
       <div className="theme">
         <Navbar/>
         <div className="center-part">
           <Outlet/>
         </div>
       </div>
+      </QueryClientProvider>
     )
   }
 
