@@ -1,8 +1,9 @@
 import Express  from "express";
-import {getCourse} from "../controllers/coursesController.js"
+import {getCourse, addCourse} from "../controllers/coursesController.js"
 
 const router = Express.Router()
 
-router.get("/", getCourse)
+router.get("/get", getCourse)
+router.post("/add", addCourse)
 
 export default router

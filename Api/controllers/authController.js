@@ -42,13 +42,8 @@ export const register = (req, res) =>{
         db.query(q2, [req.body.username, hashedPassword, req.body.email], (err, data)=>{
             if(err) return res.status(500).json(err)
             return res.status(200).json("user has been created")
-        })
-
-   
-   
-    })
-
-   
+        }) 
+    })  
 }
 
 export const logout = (req, res) =>{
