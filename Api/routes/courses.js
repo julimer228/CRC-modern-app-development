@@ -5,4 +5,5 @@ const router = Express.Router()
 
 router.get("/", getCourse)
 
+
 export default router

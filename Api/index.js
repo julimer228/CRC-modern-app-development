@@ -4,6 +4,7 @@ import coursesRoutes from "./routes/courses.js";
 import authRoutes from "./routes/auth.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import multer from "multer";
 
 
 const app = Express()
@@ -16,6 +17,26 @@ app.use((req, res, next)=>{
 app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(Express.json())
 app.use(cookieParser())
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "../Client/public/upload");
+    },
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + file.originalname);
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+  
+  app.post("/api/upload", upload.single("file"), (req, res) => {
+    const file = req.file;
+    res.status(200).json(file.filename);
+  });
+  
+
+
 
 app.use("/api/users",userRoutes)
 app.use("/api/courses",coursesRoutes)
