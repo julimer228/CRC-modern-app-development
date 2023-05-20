@@ -1,18 +1,19 @@
 .element{
     display: flex;
     align-items: center;
-    gap:30px;
+    gap:10px;
     background-color: #879a8d;
     justify-content: space-between;
-    padding: 20px 20px 20px 20px;
-    border-radius: 30px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
 
 
     .left{
         align-items: center;
         display: flex;
-        padding: 20px 20px 20px 100px;
-        gap:20%;
+        padding: 10px 10px 10px 30px;
+        gap:10%;
+        width:50%;
         span{
             color: aliceblue;
             font-size: 30px;
@@ -20,15 +21,15 @@
         }
 
         img{
-            width: 50%;
-            height:50%;
+            width: 200px;
+            height:200px;
             border-radius: 10%;
             object-fit: cover;
         }
     }
 
     .right{
-        padding: 20px 100px 20px 20px;
+        padding: 20px 50px 20px 20px;
 
     
         display: flex;
@@ -36,7 +37,7 @@
         gap: 10px;
 
         .course-element{
-            justify-content: flex-start;
+        justify-content: flex-start;
         display: flex;
         align-items: center;
         flex-direction: row;

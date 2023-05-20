@@ -4,22 +4,10 @@ import AlarmIcon from '@mui/icons-material/Alarm';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import TranslateIcon from '@mui/icons-material/Translate';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-
-import { useState } from "react";
-import { useQuery, useQueryClient, useMutation } from "react-query";
-import { useContext } from "react";
-import { AuthContext } from "../../context/authContext";
 import Moment from 'moment';
 
 
 const CourseItem = ({ course }) =>{
-
-    const queryClient = useQueryClient();
-    const { currentUser } = useContext(AuthContext);
-
-
-
-
 
     return(
         <div className="element">

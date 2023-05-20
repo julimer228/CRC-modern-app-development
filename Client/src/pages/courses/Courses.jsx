@@ -125,7 +125,7 @@ const Courses = () =>{
                         <input type ="time" name="time" onChange={handleChange}/>
 
                         <label>Duration (min)</label>
-                        <input type ="number" placeholder="Duration" step={15} id="duration" name="duration" onChange={handleChange}/>
+                        <input type ="time" placeholder="Duration" step={15} id="duration" name="duration" onChange={handleChange}/>
 
 
                         <label>Price (PLN)</label>
