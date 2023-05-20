@@ -10,7 +10,7 @@ const My = () =>{
 
     
     const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest.get("/courses?userId="+userId).then((res) => {
+    makeRequest.get("/courses?userId=").then((res) => {
       return res.data;
     }) );
 
