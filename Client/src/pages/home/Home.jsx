@@ -5,9 +5,7 @@ import { makeRequest } from "../../axios";
 
 
 
-
 const Home = () =>{
-
 
 
     const { isLoading, error, data } = useQuery(["courses"], () =>
@@ -21,7 +19,7 @@ const Home = () =>{
             <div className="title">
                 <span>Choose courses</span>
             </div>
-            <div className="courses">
+            <div className="courses-all">
 
                 {
                     error

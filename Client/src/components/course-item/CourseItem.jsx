@@ -6,10 +6,43 @@ import TranslateIcon from '@mui/icons-material/Translate';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import Moment from 'moment';
 import { AuthContext } from "../../context/authContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { makeRequest } from "../../axios";
 
 
 const CourseItem = ({ course }) =>{
+
+    const {currentUser} = useContext(AuthContext);
+
+    const [inputs, setInputs] = useState({
+        userId:currentUser.id,
+        courseId:course.id,
+    })
+
+    const [err, setError] = useState(null)
+    const [info, setInfo] = useState(null)
+
+    const registerUser = async e =>{
+        e.preventDefault()
+
+        try{
+            console.log(inputs)
+            await makeRequest.post('myCourses', inputs)
+            setInfo("User "+currentUser.username+" has been registered to the course "+course.title+"!")
+
+            setTimeout(() => {
+                setInfo(null);
+                        }, 3000);
+        }
+        catch(err){
+            setError(err.response.data)
+            setTimeout(() => {
+                setError(null);
+                        }, 3000);
+        }
+
+
+    }
 
     return(
         <div className="element">
@@ -74,10 +107,12 @@ const CourseItem = ({ course }) =>{
                     </span>
                 </div>
             <div className="buttons">
-                <button>
+                <button onClick={registerUser}>
                     Register
                 </button>
             </div>
+            <span className="information">{err && err}</span>
+            <span className="information">{info && info}</span>
             </div>
         </div>
     );

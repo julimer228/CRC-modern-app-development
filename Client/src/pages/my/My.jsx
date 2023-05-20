@@ -11,7 +11,7 @@ const My = () =>{
     const {currentUser} = useContext(AuthContext);
 
     
-    const { isLoading, error, data } = useQuery(["courses"], () =>
+    const { isLoading, error, data } = useQuery(["coursesid"], () =>
     makeRequest.get("/myCourses?userId="+currentUser.id).then((res) => {
       console.log(currentUser.id)
       return res.data;
@@ -30,8 +30,8 @@ const My = () =>{
                     ? "Something went wrong!"
                     : isLoading
                     ? "loading"
-                    :data.map((course)=>(
-                        <MyCourseItem  course = {course} key={course.courseid}/>
+                    :data.map((myCourse)=>(
+                        <MyCourseItem  myCourse = {myCourse} key={myCourse.courseid}/>
                     ))
                 }
 

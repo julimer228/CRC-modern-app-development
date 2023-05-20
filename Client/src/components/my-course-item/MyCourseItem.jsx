@@ -7,13 +7,14 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import Moment from 'moment';
 
 
-const MyCourseItem = ({ course }) =>{
+const MyCourseItem = ({ myCourse }) =>{
+    
 
     return(
         <div className="element">
             <div className="left">
-            <img src={course.img} />
-                <span>{course.title}</span>
+            <img src={myCourse.img} />
+                <span>{myCourse.title}</span>
                
             </div>
             <div className="right">
@@ -24,7 +25,7 @@ const MyCourseItem = ({ course }) =>{
                     </span>
 
                    <span >
-                   {Moment(course.date).format('DD-MM-YYYY, HH:mm a')}
+                   {Moment(myCourse.date).format('DD-MM-YYYY, HH:mm a')}
                     </span>
         
                     
@@ -36,7 +37,7 @@ const MyCourseItem = ({ course }) =>{
                     Duration:
                     </span>
                     <span>
-                    {course.duration} h
+                    {myCourse.duration} h
                     </span>
                 </div>
 
@@ -46,7 +47,7 @@ const MyCourseItem = ({ course }) =>{
                     Price:
                     </span>
                     <span>
-                    {course.price} zł
+                    {myCourse.price} zł
                     </span>
 
                 </div>
@@ -57,7 +58,7 @@ const MyCourseItem = ({ course }) =>{
                     Teacher:
                     </span>
                     <span>
-                    {course.teacher}
+                    {myCourse.teacher}
                     </span>
                 </div>
 
@@ -68,7 +69,7 @@ const MyCourseItem = ({ course }) =>{
                     Language:
                     </span>
                     <span>
-                    {course.language}
+                    {myCourse.language}
                     </span>
                 </div>
             </div>
