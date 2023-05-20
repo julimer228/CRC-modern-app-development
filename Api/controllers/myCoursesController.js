@@ -11,14 +11,11 @@ export const getMyCourses = (req, res)=>{
     FROM (Users u JOIN courses_users cu ON u.id = cu.userid)
     JOIN Courses c ON cu.courseid = c.id
     WHERE u.ID=?`;
-    
-    console.log(req.body)
 
-    db.query(q, [req.body.userId], (err, data) => {
+    db.query(q, [req.query.userId], (err, data) => {
         if (err) return res.status(500).json(err);
         return res.status(200).json(data);
       });
-
 }
 
 

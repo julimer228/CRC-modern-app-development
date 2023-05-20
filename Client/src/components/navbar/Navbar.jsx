@@ -3,9 +3,9 @@ import CottageIcon from '@mui/icons-material/Cottage';
 import EditIcon from '@mui/icons-material/Edit';
 import GridViewIcon from '@mui/icons-material/GridView';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 
 const Navbar = () =>{

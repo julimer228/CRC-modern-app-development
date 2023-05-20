@@ -4,7 +4,7 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./app.scss"
 import Navbar from "./components/navbar/Navbar";
-import My from "./pages/my/my";
+import My from "./pages/my/My";
 import Courses from "./pages/courses/Courses";
 import  {useContext} from "react";
 import {AuthContext} from "./context/authContext";
