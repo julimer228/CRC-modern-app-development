@@ -1,5 +1,5 @@
 import  Express  from "express";
-import userRoutes from "./routes/users.js";
+import myCoursesRoutes from "./routes/myCourses.js";
 import coursesRoutes from "./routes/courses.js";
 import authRoutes from "./routes/auth.js";
 import cors from "cors";
@@ -35,7 +35,7 @@ const storage = multer.diskStorage({
     res.status(200).json(file.filename);
   });
 
-app.use("/api/users",userRoutes)
+app.use("/api/myCourses",myCoursesRoutes)
 app.use("/api/courses",coursesRoutes)
 app.use("/api/auth",authRoutes)
 

@@ -4,14 +4,16 @@ import AlarmIcon from '@mui/icons-material/Alarm';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import TranslateIcon from '@mui/icons-material/Translate';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import Moment from 'moment';
 
 
-const MyCourseItem = () =>{
+const MyCourseItem = ({ course }) =>{
+
     return(
         <div className="element">
             <div className="left">
-            <img src="src\icons\cell.png" />
-                <span>Course Title</span>
+            <img src={course.img} />
+                <span>{course.title}</span>
                
             </div>
             <div className="right">
@@ -22,7 +24,7 @@ const MyCourseItem = () =>{
                     </span>
 
                    <span >
-                    10:20 01.02.2023
+                   {Moment(course.date).format('DD-MM-YYYY, HH:mm a')}
                     </span>
         
                     
@@ -34,7 +36,7 @@ const MyCourseItem = () =>{
                     Duration:
                     </span>
                     <span>
-                    120 min
+                    {course.duration} h
                     </span>
                 </div>
 
@@ -44,7 +46,7 @@ const MyCourseItem = () =>{
                     Price:
                     </span>
                     <span>
-                    2000 zł
+                    {course.price} zł
                     </span>
 
                 </div>
@@ -55,7 +57,7 @@ const MyCourseItem = () =>{
                     Teacher:
                     </span>
                     <span>
-                    Mark Parker
+                    {course.teacher}
                     </span>
                 </div>
 
@@ -66,7 +68,7 @@ const MyCourseItem = () =>{
                     Language:
                     </span>
                     <span>
-                    English
+                    {course.language}
                     </span>
                 </div>
             </div>

@@ -1,10 +1,8 @@
 import "./my.scss"
 import { makeRequest } from "../../axios";
-import CourseItem from "../../components/course-item/CourseItem";
-import { useState } from "react";
-import { useQuery, useQueryClient, useMutation } from "react-query";
-import { useContext } from "react";
-import { AuthContext } from "../../context/authContext";
+import MyCourseItem from "../../components/my-course-item/MyCourseItem";
+import { useQuery} from "react-query";
+
 
 const My = () =>{
 
@@ -23,11 +21,15 @@ const My = () =>{
             <div className="courses">
 
                 {
-                    data.map((course)=>(
-                        <CourseItem  course = {course} key={course.id}/>
+                    error
+                    ? "Something went wrong!"
+                    : isLoading
+                    ? "loading"
+                    :data.map((course)=>(
+                        <MyCourseItem  course = {course} key={course.id}/>
                     ))
                 }
-              
+
             </div>
         </div>
     );

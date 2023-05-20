@@ -10,7 +10,7 @@ const Home = () =>{
 
 
 
-    const { isLoading, error, data } = useQuery(["posts"], () =>
+    const { isLoading, error, data } = useQuery(["courses"], () =>
     makeRequest.get("/courses/get").then((res) => {
       return res.data;
     }) );

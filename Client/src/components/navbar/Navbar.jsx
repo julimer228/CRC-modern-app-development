@@ -55,7 +55,7 @@ const Navbar = () =>{
                     <span>
                         {currentUser.username}
                     </span>
-                    <img src="src\icons\white-blood-cell.png"/>
+                    <img src="src\icons\profile.jpg"/>
                 </div>
             </div>
         </div>
