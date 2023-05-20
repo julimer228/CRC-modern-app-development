@@ -5,6 +5,8 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import TranslateIcon from '@mui/icons-material/Translate';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import Moment from 'moment';
+import { AuthContext } from "../../context/authContext";
+import { useContext } from "react";
 
 
 const CourseItem = ({ course }) =>{
