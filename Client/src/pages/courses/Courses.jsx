@@ -17,18 +17,6 @@ export function getCurrentDate(separator=''){
 
 const Courses = () =>{
 
-    const upload = async () => {
-        try {
-          const formData = new FormData();
-          formData.append("file", file);
-          const res = await makeRequest.post("/upload", formData);
-          return res.data;
-        } catch (err) {
-          console.log(err);
-        }
-      };
-
-
     const [inputs, setInputs] = useState({
         title:null,
         date:null,
@@ -37,10 +25,10 @@ const Courses = () =>{
         price:null,
         teacher:null,
         langs:null,
-        image:"course-default.jpg"
+        image:null
     })
 
-    const [imgUrl, setUrl] =useState("course-default.jpg") ;
+    const [imgUrl, setUrl] =useState(null) ;
 
     let dateTime = inputs.date+" "+inputs.time
 
@@ -51,35 +39,17 @@ const Courses = () =>{
         price:inputs.price,
         teacher:inputs.teacher,
         language:inputs.langs,
-        img:"../../../public/upload/"+imgUrl
+        img:inputs.image
     }
 
     const [err, setError] = useState(null)
     const [info, setInfo] = useState(null)
     const [file, setFile] = useState(null);
-    const [info_img, setImgInfo] = useState(null);
-
-    const handleClick = async (e) => {
-        e.preventDefault();
-        let url=null;
-
-        if (file) {url = await upload();
-        setUrl(url);
-        setImgInfo("Image has been accepted");
-        }
-        else{
-            setImgInfo("Invalid Image")
-        }
-
-        setTimeout(() => {
-            setImgInfo(null);
-                    }, 2000);
-        
-      };
 
     const handleChange = e =>{
         setInfo(null)
         setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
+        setUrl(inputs.image)
     }
 
     const addCourse =  async e =>{
@@ -100,10 +70,10 @@ const Courses = () =>{
         }
     }
 
-
-
-
-
+    
+    const refreshImage = e =>{
+        setUrl(inputs.image)
+    }
 
     const date = getCurrentDate('-');
 
@@ -125,7 +95,7 @@ const Courses = () =>{
                         <input type ="time" name="time" onChange={handleChange}/>
 
                         <label>Duration (min)</label>
-                        <input type ="time" placeholder="Duration" step={15} id="duration" name="duration" onChange={handleChange}/>
+                        <input type ="time" placeholder="Duration" step={600} id="duration" name="duration" onChange={handleChange}/>
 
 
                         <label>Price (PLN)</label>
@@ -133,6 +103,9 @@ const Courses = () =>{
 
                         <label>Teacher</label>
                         <input type ="text" placeholder="Teacher" name="teacher" onChange={handleChange}/>
+
+                        <label>Image URL</label>
+                        <input type ="text" placeholder="Image URL" name="image" onChange={handleChange} oninput={refreshImage}/>
 
                         <label>Language</label>
 
@@ -160,26 +133,13 @@ const Courses = () =>{
 
                 <div className="right">  
                 <div className="img-box"> 
-                  {file && (
-              <img className="file" alt="" src={URL.createObjectURL(file)} />
-            )}
                    
                 </div>   
-                    <div className="buttons">
-                        <button>
-                        <label className="upload">
-                        <input type="file" id="file" 
-                        onChange={(e) => setFile(e.target.files[0])}/>
-                                Upload Image
-                        </label>
-                        </button>
-                        <button onClick={handleClick}>
-                            Accept image
-                        </button>
+                    <div className="rectangle">
+
+                    <img src={imgUrl} key={Date.now()}/>
+
                     </div>
-                    <div className="info">
-                        <span>{info_img && info_img}</span>
-                        </div>
                 </div>
             </div>    
         </div>
