@@ -6,6 +6,8 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { Link} from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 import { useContext } from "react";
+import Avatar from '@mui/material/Avatar';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const Navbar = () =>{
@@ -55,7 +57,9 @@ const Navbar = () =>{
                     <span>
                         {currentUser.username}
                     </span>
-                    <img src="src\icons\profile.jpg"/>
+                    <Avatar>
+                         <AccountCircleIcon />
+                    </Avatar>
                 </div>
             </div>
         </div>

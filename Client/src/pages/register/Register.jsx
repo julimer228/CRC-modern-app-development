@@ -23,11 +23,18 @@ const Register = () =>{
         setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
     }
 
+
+    let config = {headers: {
+        'Access-Control-Allow-Origin': 'https://crc-front.vercel.app/',
+        'Access-Control-Allow-Credentials': 'true'
+      }}
+
     const registerUser =  async e =>{
         e.preventDefault()
 
         try{
-            await axios.post(endpoints.REGISTER, inputs)
+            await axios.post(endpoints.REGISTER, inputs,config
+                )
             navigate("/login")
         }
         catch(err){

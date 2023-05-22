@@ -4,9 +4,6 @@ import jwt from "jsonwebtoken";
 
 export const getMyCourses = (req, res)=>{
 
-    const token = req.cookies.accessToken;
-    if (!token) return res.status(401).json("Not logged in!");
-
     const q = `SELECT u.id, u.username, c.title, c.duration, c.price, c.date, c.language, c.teacher,c.img
     FROM (Users u JOIN courses_users cu ON u.id = cu.userid)
     JOIN Courses c ON cu.courseid = c.id
@@ -21,11 +18,6 @@ export const getMyCourses = (req, res)=>{
 
 
 export const addMyCourse = (req, res) => {
-
-    const token = req.cookies.accessToken;
-    if (!token) return res.status(401).json("Not logged in!");
-
-
     const q = `SELECT * FROM courses_users WHERE userid = ? AND courseid=?`
     db.query(q, [req.body.userId, req.body.courseId], (err, data)=>{
         if(err) return res.status(500).json(err)

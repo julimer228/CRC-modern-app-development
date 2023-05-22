@@ -10,10 +10,12 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post(endpoints.LOGIN, inputs, {
-      withCredentials: true,
-    });
 
+    let config = {headers: {
+      'Access-Control-Allow-Origin': 'https://crc-front.vercel.app',
+      'Access-Control-Allow-Credentials': true
+    }}
+    const res = await axios.post(endpoints.LOGIN, inputs, config);
     setCurrentUser(res.data)
   };
 

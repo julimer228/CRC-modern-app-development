@@ -1,7 +1,7 @@
 
-   export const REGISTER = "http://localhost:8800/api/auth/register"
-   export const LOGIN = "http://localhost:8800/api/auth/login"
-   export const LOGOUT="http://localhost:8800/api/auth/logout"
-   export const API = "http://localhost:8800/api/"
-   export const ADD_COURSE = "http://localhost:8800/api/courses/add"
-   export const REGISTER_COURSE = "http://localhost:8800/api/myCourses"
+   export const REGISTER = "https://medits.herokuapp.com/api/auth/register"
+   export const LOGIN = "https://medits.herokuapp.com/api/auth/login"
+   export const LOGOUT="https://medits.herokuapp.com/api/auth/logout"
+   export const API = "https://medits.herokuapp.com/api/"
+   export const ADD_COURSE = "https://medits.herokuapp.com/api/courses/add"
+   export const REGISTER_COURSE = "https://medits.herokuapp.com/api/myCourses"
